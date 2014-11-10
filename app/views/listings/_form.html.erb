@@ -1,13 +1,19 @@
 <%= form_for(@listing, :html => { :multipart => true }) do |f| %>
   <% if @listing.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  
 
-      <ul>
-      <% @listing.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+      <div id="error_explanation">
+        <h4><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h4>
+
+        <ul>
+          <% @listing.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 

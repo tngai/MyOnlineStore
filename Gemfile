@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-
+gem 'mongoid-rspec'
+gem 'rspec-rails'
+gem 'pry-rails'
 gem 'money-rails'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
@@ -30,7 +32,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
+
  gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby', '~>3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'

@@ -1,11 +1,29 @@
 Rails.application.routes.draw do
-  resources :listings
+  post 'sessions' => 'sessions#create'
+  get 'sessions' => 'sessions#new', as: :new_sessions
+  delete  'sessions' => 'sessions#destroy'
 
-  get 'pages/about'
+  get    'users' => 'users#index', as: :users
+  post   'users'=> 'users#create'
+  get    'users/new' => 'users#new', as: :new_user  
+  get    'users/:id/edit' => 'users#edit', as: :edit_user
+  get    'users/:id' => 'users#show', as: :user
+  patch  'users/:id' => 'users#update'
+  delete 'users/:id' => 'users#destroy'
+  
+  get    'listings' => 'listings#index', as: :listings
+  post   'listings'=> 'lisings#create'
+  get    'listings/new' => 'listings#new', as: :new_listing  
+  get    'listings/:id/edit' => 'listings#edit', as: :edit_listing
+  get    'listings/:id' => 'listings#show', as: :listing
+  patch  'listings/:id' => 'listings#update'
+  delete 'listings/:id' => 'listings#destroy'
 
-  get 'pages/contact'
+  get 'pages/about' => 'pages#about', as: :pages_about
+  get 'pages/contact' => 'pages#contact', as: :pages_contact
+  
+  root 'sessions#new' 
 
-  root 'listings#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

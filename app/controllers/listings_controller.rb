@@ -1,8 +1,12 @@
 class ListingsController < ApplicationController
+  
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  
 
   def index
     @listings = Listing.all
+    @is_signup = true
+    @is_login = true
   end
 
   def show
@@ -60,4 +64,7 @@ class ListingsController < ApplicationController
     def listing_params
       params.require(:listing).permit(:name, :description, :price, :image)
     end
+
+   
+
 end
