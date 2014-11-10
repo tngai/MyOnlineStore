@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   delete 'users/:id' => 'users#destroy'
   
   get    'listings' => 'listings#index', as: :listings
-  post   'listings'=> 'lisings#create'
+  post   'listings'=> 'listings#create'
   get    'listings/new' => 'listings#new', as: :new_listing  
   get    'listings/:id/edit' => 'listings#edit', as: :edit_listing
   get    'listings/:id' => 'listings#show', as: :listing
